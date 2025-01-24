@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Onboarding Form</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Employee Onboarding Form</h1>
+
+          <!-- Prepopulate Select -->
+          <div class="prepopulate-section">
+            <label for="prepopulate">Load Sample Data:</label>
+            <select id="prepopulate" onchange="prepopulateForm(this.value)">
+                <option value="">Select a sample profile</option>
+                <option value="profile1">Sample Profile 1</option>
+                <option value="profile2">Sample Profile 2</option>
+                <option value="profile3">Sample Profile 3</option>
+            </select>
+        </div>
+        
+        <form id="employeeForm">
+            <!-- Personal Information -->
+            <div class="form-section">
+                <h2>Personal Information</h2>
+                
+                <div class="form-group">
+                    <label for="firstName">First Name *</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="lastName">Last Name *</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Address *</label>
+                    <textarea id="address" name="address" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="phoneNumber">Phone Number *</label>
+                    <input type="tel" id="phoneNumber" name="phoneNumber" 
+                           pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                           placeholder="123-456-7890" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="ssn">SSN *</label>
+                    <input type="password" id="ssn" name="ssn" 
+                           pattern="[0-9]{3}-[0-9]{2}-[0-9]{4}"
+                           placeholder="123-45-6789" required>
+                </div>
+            </div>
+
+            <!-- Banking Information -->
+            <div class="form-section">
+                <h2>Banking Information</h2>
+                
+                <div class="form-group">
+                    <label for="accountNumber">Account Number *</label>
+                    <input type="password" id="accountNumber" name="accountNumber" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="routingNumber">Routing Number *</label>
+                    <input type="password" id="routingNumber" name="routingNumber" 
+                           pattern="[0-9]{9}"
+                           placeholder="Nine digits" required>
+                </div>
+            </div>
+
+            <!-- Preferences -->
+            <div class="form-section">
+                <h2>Preferences</h2>
+                
+                <div class="form-group">
+                    <label for="tshirtSize">T-shirt Size *</label>
+                    <select id="tshirtSize" name="tshirtSize" required>
+                        <option value="">Select size</option>
+                        <option value="XS">X-Small</option>
+                        <option value="S">Small</option>
+                        <option value="M">Medium</option>
+                        <option value="L">Large</option>
+                        <option value="XL">X-Large</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="machinePreference">Machine Preference *</label>
+                    <select id="machinePreference" name="machinePreference" required>
+                        <option value="">Select machine</option>
+                        <option value="macbook">MacBook Pro</option>
+                        <option value="windows">Windows Laptop</option>
+                        <option value="linux">Linux Laptop</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Home Office Setup</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="headphones" name="officeSetup" value="headphones">
+                            <label for="headphones">Headphones</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="webcam" name="officeSetup" value="webcam">
+                            <label for="webcam">Webcam</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="mouse" name="officeSetup" value="mouse">
+                            <label for="mouse">Mouse</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="keyboard" name="officeSetup" value="keyboard">
+                            <label for="keyboard">Keyboard</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="ergonomicChair" name="officeSetup" value="ergonomicChair">
+                            <label for="ergonomicChair">Ergonomic Chair</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="standingDesk" name="officeSetup" value="standingDesk">
+                            <label for="standingDesk">Standing Desk</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="js/form-validation.js"></script>
+</body>
+</html>

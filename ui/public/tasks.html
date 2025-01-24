@@ -1,0 +1,47 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Express TypeScript Server</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="loader-container" id="loaderContainer">
+        <div class="loader"></div>
+    </div>
+    <div class="container">
+        <h1>Employee Onboarding Task Management Portal</h1>
+        
+
+        <div class="tasks-list">
+            <h2>Open Tasks</h2>
+            <div class="list-headers">
+                <span class="header-name">Task ID</span>
+                <span class="header-dept">Department</span>
+                <span class="header-status">Status</span>
+                <span class="header-assignee">Assignee</span>
+                <span class="header-action">Action</span>
+            </div>
+            <div id="tasks-container">
+                <!-- Items will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Assignment Modal -->
+    <div id="assign-modal" class="modal">
+        <div class="modal-content">
+            <h2>Assign Task</h2>
+            <input type="text" id="assignee-name" placeholder="Enter assignee name">
+            <div class="modal-buttons">
+                <button onclick="confirmAssign()">Assign</button>
+                <button onclick="closeModal()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>
